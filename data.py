@@ -124,22 +124,26 @@ def drawPlot(grads, g1, g2, g3, names):
 	
 	
 	if 0 in shown:
-		ax.bar([i*2 for i in range(len(names))], grads, 1.5, label = "Media", color = (1,0,1,1))
+		ax.bar([i*2 for i in range(len(names))], grads, 1.5, label = "Media", color = "#ED120C", edgecolor = "#9B0B09")
 	
 	if 1 in shown:
-		ax.bar([i*2-0.5 for i in range(len(names))], g3, 0.5, label = "Magyar", color = (0.2,0.8,0,1))
+		ax.bar([i*2-0.5 for i in range(len(names))], g3, 0.5, label = "Magyar", color = "#FCC512", edgecolor = "#C1950F")
 	
 	if 2 in shown:
-		ax.bar([i*2 for i in range(len(names))], g2, 0.5, label = "Matek", color = (0.1,0.5,1,1))
+		ax.bar([i*2 for i in range(len(names))], g2, 0.5, label = "Matek", color = "#EA8037", edgecolor = "#C1692E")
 	
 	if 3 in shown:
-		ax.bar([i*2+0.5 for i in range(len(names))], g1, 0.5, label = "Román", color = (0.9,0,0,1))
+		ax.bar([i*2+0.5 for i in range(len(names))], g1, 0.5, label = "Román", color = "#9F4D17", edgecolor = "#68310F")
 	
-	
+	ax.set_facecolor("#FFFDD0")
+	fig.patch.set_facecolor("#FFDD96")
 
 	
-	ax.legend()
+	ax.legend(framealpha = 0)
+	
 	plt.xticks([i*2 for i in range(len(names))], names, rotation = "vertical")
+	
+	plt.axhline(y=5,linewidth=1, color="#5B0B09", dashes = (5, 3))
 	
 	plt.tight_layout()
 
